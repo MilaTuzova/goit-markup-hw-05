@@ -18,6 +18,7 @@ html {
     --footer-backgr-color: #2f303a;
     --social-color: #afb1b8;
     --border-color: #afb1b8;
+    -cubic-time: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .visually-hidden {
