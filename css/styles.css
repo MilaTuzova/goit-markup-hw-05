@@ -346,6 +346,7 @@ nav a.logo {
 }
 
 .list-cards {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -363,6 +364,23 @@ nav a.logo {
 
 .list-cards-block:last-child {
     margin-right: 0;
+}
+
+.card-text {
+    position: absolute;
+    bottom: 0px;
+    display: inline-block;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    width: 370px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--primary-white-color);
+    background-color: rgba(47, 48, 58, 0.8);
 }
 
 
