@@ -62,22 +62,26 @@ ul {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+    color: var(--secont-text-color);
+}
+
+li {
+    list-style-type: none;
+}
+
 
 /* шапка страницы*/
 
 .main-header {
-    padding-top: 24px;
-    padding-bottom: 25px;
+    background-color: var(--primary-white-color);
 }
 
 .main-header .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-
-.main-header {
-    background-color: var(--primary-white-color);
 }
 
 ul.nav-link,
@@ -93,21 +97,14 @@ nav {
     align-items: center;
 }
 
-a {
-    text-decoration: none;
-    color: var(--secont-text-color);
-}
-
-li {
-    list-style-type: none;
-}
-
 nav a.logo {
     display: inline-block;
     margin-right: 93px;
 }
 
 .logo {
+    padding-top: 24px;
+    padding-bottom: 25px;
     font-family: Raleway, sans-serif;
     font-weight: 700;
     font-size: 26px;
@@ -126,6 +123,8 @@ nav a.logo {
 .nav-link .link {
     display: inline-block;
     margin-left: 50px;
+    padding-bottom: 32px;
+    padding-top: 32px;
 }
 
 .link.first {
@@ -137,6 +136,8 @@ nav a.logo {
     align-items: center;
     width: 161px;
     color: var(--notactiv-color);
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .link-tel {
@@ -145,6 +146,8 @@ nav a.logo {
     text-align: center;
     width: 142px;
     color: var(--notactiv-color);
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .nav-link,
@@ -154,12 +157,6 @@ nav a.logo {
     line-height: 1.2;
     font-style: normal;
     letter-spacing: 0.02em;
-}
-
-.link:hover,
-.link.current,
-.link:focus {
-    color: var(--accent-color);
 }
 
 .icon-tel-sprite {
@@ -172,8 +169,31 @@ nav a.logo {
     fill: var(--notactiv-color);
 }
 
+.menu-link {
+    position: relative;
+}
+
+.menu-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+    opacity: 1;
+}
+
 
 /* ховер и фокус для телефона и почты в хедере*/
+
+.link:hover,
+.link.current,
+.link:focus {
+    color: var(--accent-color);
+}
 
 .link:hover .icon-mail-sprite,
 .link:focus .icon-mail-sprite,
