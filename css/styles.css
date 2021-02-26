@@ -18,7 +18,8 @@ html {
     --footer-backgr-color: #2f303a;
     --social-color: #afb1b8;
     --border-color: #afb1b8;
-    -cubic-time: cubic-bezier(0.4, 0, 0.2, 1);
+    --cubic-time: cubic-bezier(0.4, 0, 0.2, 1);
+    --time-duration: 1000ms;
 }
 
 .visually-hidden {
@@ -76,6 +77,7 @@ li {
 
 .main-header {
     background-color: var(--primary-white-color);
+    border-bottom: 1px solid var(--button-color);
 }
 
 .main-header .container {
@@ -99,7 +101,7 @@ nav {
 
 nav a.logo {
     display: inline-block;
-    margin-right: 93px;
+    margin-right: 43px;
 }
 
 .logo {
@@ -125,9 +127,10 @@ nav a.logo {
     margin-left: 50px;
     padding-bottom: 32px;
     padding-top: 32px;
+    transition: color var(--time-duration) var(--cubic-time);
 }
 
-.link.first {
+..nav-link .link:first-child {
     margin-left: 0;
 }
 
@@ -138,6 +141,7 @@ nav a.logo {
     color: var(--notactiv-color);
     padding-top: 32px;
     padding-bottom: 32px;
+    transition: color var(--time-duration) var(--cubic-time);
 }
 
 .link-tel {
@@ -148,6 +152,7 @@ nav a.logo {
     color: var(--notactiv-color);
     padding-top: 32px;
     padding-bottom: 32px;
+    transition: color var(--time-duration) var(--cubic-time);
 }
 
 .nav-link,
@@ -162,11 +167,13 @@ nav a.logo {
 .icon-tel-sprite {
     margin-right: 10px;
     fill: var(--notactiv-color);
+    transition: fill var(--time-duration) var(--cubic-time);
 }
 
 .icon-mail-sprite {
     margin-right: 10px;
     fill: var(--notactiv-color);
+    transition: fill var(--time-duration) var(--cubic-time);
 }
 
 .menu-link {
@@ -177,17 +184,24 @@ nav a.logo {
     content: "";
     display: block;
     position: absolute;
+    bottom: -1px;
     left: 0;
-    bottom: 0;
     width: 100%;
     height: 4px;
     border-radius: 2px;
     background-color: var(--accent-color);
-    opacity: 1;
+    opacity: 0;
+    transition: opacity var(--time-duration) var(--cubic-time);
 }
 
 
 /* ховер и фокус для телефона и почты в хедере*/
+
+.menu-link:focus::after,
+.menu-link:hover::after,
+.menu-link.current::after {
+    opacity: 1;
+}
 
 .link:hover,
 .link.current,
@@ -255,6 +269,7 @@ nav a.logo {
     text-align: center;
     color: var(--primary-white-color);
     background-color: var(--accent-color);
+    transition: color var(--time-duration) var(--cubic-time);
 }
 
 .main-info .main-link {
@@ -442,10 +457,12 @@ nav a.logo {
     border-radius: 50%;
     padding: 12px 12px;
     color: var(--social-color);
+    transition: background-color var(--time-duration) var(--cubic-time);
 }
 
 .icon-item {
     fill: currentColor;
+    transition: fill var(--time-duration) var(--cubic-time);
 }
 
 .icon-social-link:hover,
@@ -502,10 +519,12 @@ nav a.logo {
     cursor: pointer;
     border: 1px solid var(--social-color);
     border-radius: 4px;
+    transition: border var(--time-duration) var(--cubic-time);
 }
 
 .client-icon {
     fill: var(--social-color);
+    transition: fill var(--time-duration) var(--cubic-time);
 }
 
 .button-client:hover .client-icon,
@@ -564,7 +583,9 @@ nav a.logo {
 }
 
 .footer-info-mail:hover,
-.footer-info-mail:focus {
+.footer-info-mail:focus,
+.footer-info-tel:hover,
+.footer-info-tel:focus {
     color: var(--accent-color);
 }
 
@@ -576,6 +597,7 @@ nav a.logo {
     font-size: 14px;
     line-height: 2;
     color: var(--notactiv-color);
+    transition: color var(--time-duration) var(--cubic-time);
 }
 
 .footer-info-mail {
@@ -621,7 +643,6 @@ nav a.logo {
 /* Страница ПОРТФОЛИО */
 
 .portfolio {
-    border-top: 2px solid var(--button-color);
     padding-top: 95px;
     padding-bottom: 94px;
 }
@@ -648,16 +669,14 @@ nav a.logo {
     color: var(--primary-text-color);
     letter-spacing: 0.03em;
     text-align: center;
+    background-color: var(--button-color);
+    transition: background-color var(--time-duration) var(--cubic-time), color var(--time-duration) var(--cubic-time);
 }
 
 button:hover,
 button:focus {
     color: var(--primary-white-color);
-    background: var(--accent-color);
-}
-
-button:active {
-    color: var(--notactiv-color);
+    background-color: var(--accent-color);
 }
 
 
@@ -688,6 +707,7 @@ button:active {
 .portfolio-card-item:hover,
 .portfolio-card-item:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    transition: box-shadow var(--time-duration) var(--cubic-time);
 }
 
 .portfolio-card-item img {
