@@ -782,13 +782,20 @@ button:focus {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity var(--time-duration) var(--cubic-time), box-shadow var(--time-duration) var(--cubic-time);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity var(--time-duration) var(--cubic-time), transform var(--time-duration) var(--cubic-time);
     min-width: 528px;
     min-height: 581px;
     background-color: var(--primary-white-color);
     border-radius: 4px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    transition: var(--time-duration) var(--cubic-time);
 }
 
 .button-modal {
