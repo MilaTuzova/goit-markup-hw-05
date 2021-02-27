@@ -776,6 +776,7 @@ button:focus {
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
+    transition: var(--time-duration) var(--cubic-time);
 }
 
 .modal {
