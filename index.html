@@ -50,7 +50,7 @@
         <section class="main-section hero-container">
             <h1 class="main-info title">Эффективные решения для вашего бизнеса</h1>
             <div class="main-link-item">
-                <button type="button" class="main-link">Заказать услугу</button>
+                <button type="button" class="main-link " data-modal-open>Заказать услугу</button>
             </div>
         </section>
         <!--Секция приимущества студии-->
@@ -390,14 +390,37 @@
             </div>
         </div>
     </footer>
-</body>
-<div class="backdrop is-hidden">
-    <div class="modal">
-        <p></p>
-        <button type="button-modal">
-           x
-        </button>
+    <!-- модалка -->
+    <div class="backdrop is-hidde" data-modal>
+        <div class="modal">
+            <p></p>
+            <button type="button" class="button-modal" data-modal-close>
+                <div class="modal-icon">
+                    <svg class="modal-icon-item" width="11px" height="11px">
+                     <use href="./images/icons.svg#icon-x"></use>
+                    </svg>
+                </div>
+            </button>
+        </div>
     </div>
-</div>
+    <!-- скрипт -->
+    <script>
+        (() => {
+            const refs = {
+                openModalBtn: document.querySelector('[data-modal-open]'),
+                closeModalBtn: document.querySelector('[data-modal-close]'),
+                modal: document.querySelector('[data-modal]'),
+            };
+
+            refs.openModalBtn.addEventListener('click', toggleModal);
+            refs.closeModalBtn.addEventListener('click', toggleModal);
+
+            function toggleModal() {
+                refs.modal.classList.toggle('is-hidden');
+            }
+        })();
+    </script>
+</body>
+
 
 </html>
