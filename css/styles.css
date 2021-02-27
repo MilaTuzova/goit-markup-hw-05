@@ -19,7 +19,7 @@ html {
     --social-color: #afb1b8;
     --border-color: #afb1b8;
     --cubic-time: cubic-bezier(0.4, 0, 0.2, 1);
-    --time-duration: 2000ms;
+    --time-duration: 250ms;
 }
 
 .visually-hidden {
@@ -181,7 +181,7 @@ nav a.logo {
 }
 
 .menu-link::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     bottom: -1px;
@@ -709,6 +709,7 @@ button:focus {
 /* li карточек */
 
 .portfolio-card-item {
+    position: relative;
     display: block;
     margin-right: 30px;
     margin-bottom: 30px;
@@ -756,6 +757,38 @@ button:focus {
     font-size: 16px;
     line-height: 1.9;
     color: var(--notactiv-color);
+}
+
+
+/* анимация карточек в портфолио */
+
+.overlay-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 370px;
+    height: 294px;
+    padding: 63px 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--primary-white-color);
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(+100%);
+    transition: transform var(--time-duration) var(--cubic-time);
+    pointer-events: none;
+}
+
+.portfolio-card-item:focus .overlay-text,
+.portfolio-card-item:hover .overlay-text {
+    transform: translateY(0);
+    transition: var(--time-duration) var(--cubic-time);
 }
 
 
