@@ -19,7 +19,7 @@ html {
     --social-color: #afb1b8;
     --border-color: #afb1b8;
     --cubic-time: cubic-bezier(0.4, 0, 0.2, 1);
-    --time-duration: 250ms;
+    --time-duration: 2500ms;
 }
 
 .visually-hidden {
@@ -780,7 +780,7 @@ button:focus {
     line-height: 1.6;
     color: var(--primary-white-color);
     background-color: rgba(33, 150, 243, 0.9);
-    transform: translateY(+100%);
+    transform: translateY(100%);
     transition: transform var(--time-duration) var(--cubic-time);
     pointer-events: none;
 }
@@ -788,7 +788,7 @@ button:focus {
 .portfolio-card-item:focus .overlay-text,
 .portfolio-card-item:hover .overlay-text {
     transform: translateY(0);
-    transition: var(--time-duration) var(--cubic-time);
+    /*transition: var(--time-duration) var(--cubic-time);*/
 }
 
 
@@ -829,14 +829,13 @@ button:focus {
 .backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0.5);
     opacity: 0;
-    transition: var(--time-duration) var(--cubic-time);
+    /*transition: var(--time-duration) var(--cubic-time);*/
 }
 
 .button-modal {
     position: absolute;
-    top: 0;
-    right: 0;
-    margin: 8px 8px;
+    top: 8px;
+    right: 8px;
     width: 30px;
     height: 30px;
     border: 1px solid var(--social-color);
